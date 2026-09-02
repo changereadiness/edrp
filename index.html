@@ -1,318 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EDRP | Enterprise Distribution & Resource Partners</title>
-
-<style>
-body{
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    color:#222;
-    line-height:1.6;
-}
-
-.container{
-    width:90%;
-    max-width:1100px;
-    margin:auto;
-}
-
-header{
-    background:#111;
-    color:white;
-    padding:20px 0;
-}
-
-header h1{
-    margin:0;
-    font-size:28px;
-}
-
-nav{
-    margin-top:10px;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    margin-right:20px;
-}
-
-.hero{
-    background:#f5f5f5;
-    padding:80px 0;
-}
-
-.hero h2{
-    font-size:42px;
-    margin-bottom:20px;
-}
-
-.hero p{
-    font-size:20px;
-    max-width:800px;
-}
-
-.section{
-    padding:70px 0;
-}
-
-.section h3{
-    font-size:32px;
-    margin-bottom:20px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-}
-
-.card{
-    border:1px solid #ddd;
-    padding:25px;
-}
-
-.card h4{
-    margin-top:0;
-}
-
-.dark{
-    background:#111;
-    color:white;
-}
-
-ul{
-    padding-left:20px;
-}
-
-footer{
-    padding:40px 0;
-    text-align:center;
-    background:#f5f5f5;
-}
-
-.tagline{
-    font-size:22px;
-    font-weight:bold;
-    margin-top:15px;
-}
-
-@media(max-width:768px){
-.hero h2{
-    font-size:32px;
-}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EDRP — Industrial equipment. Available now.">
+  <title>EDRP | Industrial Equipment. Available Now.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="EDRP home">
+        <span class="brand-mark">E</span><span>EDRP</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#browse">Browse</a>
+        <a href="#how">How it works</a>
+        <a href="#categories">Categories</a>
+        <a href="#about">About</a>
+        <a class="nav-cta" href="#list">List Equipment — Free</a>
+      </nav>
+    </div>
+  </header>
 
-<header>
-<div class="container">
-<h1>EDRP</h1>
-<p>Enterprise Distribution & Resource Partners</p>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">EDRP · Equipment Discovery & Resale Platform</p>
+          <h1>Industrial equipment.<br><span>Available now.</span></h1>
+          <p class="hero-text">Discover surplus, used, demo and excess equipment from companies around the world.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#browse">Browse Equipment</a>
+            <a class="button button-secondary" href="#list">List Equipment — Free</a>
+          </div>
+          <div class="trust-line">
+            <span>Human-verified listings</span>
+            <span>·</span>
+            <span>Direct seller contact</span>
+          </div>
+        </div>
+        <div class="hero-panel" aria-label="Featured equipment preview">
+          <div class="panel-top"><span>EDRP-000001</span><span class="verified">✓ EDRP Verified</span></div>
+          <div class="equipment-visual"><div class="machine-shape"><div></div><div></div><div></div></div></div>
+          <div class="panel-bottom">
+            <div><p class="label">Featured listing</p><h2>Caterpillar 3516</h2><p>Diesel Generator · 1,500 kW · 50 Hz</p></div>
+            <span class="location">Canada</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<nav>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#industries">Industries</a>
-<a href="#partners">Partners</a>
-<a href="#contact">Contact</a>
-</nav>
-</div>
-</header>
+    <section class="section section-muted" id="browse">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="eyebrow">Marketplace</p><h2>Find equipment.</h2></div>
+          <a class="text-link" href="#">View all equipment →</a>
+        </div>
+        <div class="search-bar">
+          <input type="search" placeholder="Search manufacturer, model or equipment..." aria-label="Search equipment">
+          <select aria-label="Category"><option>All categories</option><option>Generators & Power Generation</option><option>Pumps</option><option>Compressors</option><option>Construction Equipment</option></select>
+          <button class="button button-primary" type="button">Search</button>
+        </div>
+        <div class="listing-grid">
+          <article class="listing-card"><div class="card-visual"><span>EDRP-000001</span></div><div class="card-body"><p class="card-category">Generators & Power Generation</p><h3>Caterpillar 3516 Diesel Generator</h3><p>1,500 kW · 50 Hz</p><div class="card-meta"><span>Canada</span><span class="verified">✓ Verified</span></div></div></article>
+          <article class="listing-card"><div class="card-visual"><span>EDRP-000002</span></div><div class="card-body"><p class="card-category">Pumps</p><h3>Industrial Centrifugal Pump</h3><p>Flowserve Mark 3 · Used — Good</p><div class="card-meta"><span>Thailand</span><span class="verified">✓ Verified</span></div></div></article>
+          <article class="listing-card"><div class="card-visual"><span>EDRP-000003</span></div><div class="card-body"><p class="card-category">Compressors</p><h3>Atlas Copco GA 75</h3><p>75 kW · Used — Excellent</p><div class="card-meta"><span>Malaysia</span><span class="verified">✓ Verified</span></div></div></article>
+        </div>
+      </div>
+    </section>
 
-<section class="hero">
-<div class="container">
-<h2>Connecting Industrial Assets with Enterprise Demand</h2>
+    <section class="section" id="how">
+      <div class="container narrow">
+        <p class="eyebrow">Simple by design</p><h2>Discover. Connect. Transact.</h2>
+        <div class="steps"><div><span>01</span><h3>Discover</h3><p>Search a growing directory of surplus and used industrial equipment.</p></div><div><span>02</span><h3>Connect</h3><p>Contact the company offering the equipment directly through EDRP.</p></div><div><span>03</span><h3>Transact</h3><p>Buyer and seller handle the transaction directly. EDRP stays out of the deal.</p></div></div>
+      </div>
+    </section>
 
-<p>
-EDRP is an industrial brokerage and distribution platform focused on power generation systems,
-heavy equipment, industrial motors, and infrastructure assets across Canada and the Americas.
-</p>
+    <section class="section section-dark" id="list">
+      <div class="container split-cta"><div><p class="eyebrow">For equipment owners</p><h2>Got surplus equipment?</h2><p>List it with EDRP for free. No commissions. No catch.</p></div><a class="button button-light" href="#">List Equipment — Free →</a></div>
+    </section>
+  </main>
 
-<p class="tagline">
-Industrial Brokerage • Market Intelligence • Cross-Border Distribution
-</p>
-
-</div>
-</section>
-
-<section id="about" class="section">
-<div class="container">
-
-<h3>About EDRP</h3>
-
-<p>
-Enterprise Distribution & Resource Partners (EDRP) operates as an independent intermediary
-between industrial supply and operational demand.
-</p>
-
-<p>
-We work with equipment owners, dealers, resellers, rental operators, service providers,
-and industrial end users to facilitate the movement of critical infrastructure assets
-across North and South America.
-</p>
-
-</div>
-</section>
-
-<section id="services" class="section">
-<div class="container">
-
-<h3>What We Do</h3>
-
-<div class="grid">
-
-<div class="card">
-<h4>Asset Brokerage</h4>
-<p>
-Representation and sourcing of generators, engines,
-industrial motors, and heavy equipment.
-</p>
-</div>
-
-<div class="card">
-<h4>Market Intelligence</h4>
-<p>
-Monitoring surplus inventory, industrial demand,
-pricing trends, and equipment availability.
-</p>
-</div>
-
-<div class="card">
-<h4>Distribution Support</h4>
-<p>
-Buyer identification, documentation coordination,
-and transaction facilitation.
-</p>
-</div>
-
-<div class="card">
-<h4>Cross-Border Transactions</h4>
-<p>
-Supporting asset movement throughout Canada,
-the United States, Latin America, and the Caribbean.
-</p>
-</div>
-
-</div>
-
-</div>
-</section>
-
-<section id="industries" class="section">
-<div class="container">
-
-<h3>Industries Served</h3>
-
-<div class="grid">
-
-<div class="card">
-<h4>Power Generation</h4>
-<p>Diesel, gas, standby, and prime power systems.</p>
-</div>
-
-<div class="card">
-<h4>Mining & Resources</h4>
-<p>Remote operations and infrastructure support.</p>
-</div>
-
-<div class="card">
-<h4>Industrial Manufacturing</h4>
-<p>Production facilities and process industries.</p>
-</div>
-
-<div class="card">
-<h4>Marine & Offshore</h4>
-<p>Marine engines and auxiliary power systems.</p>
-</div>
-
-<div class="card">
-<h4>Infrastructure & Utilities</h4>
-<p>Municipal, institutional, and utility projects.</p>
-</div>
-
-</div>
-
-</div>
-</section>
-
-<section id="partners" class="section dark">
-<div class="container">
-
-<h3>Partnership Approach</h3>
-
-<p>
-EDRP is not a competing dealer.
-</p>
-
-<p>
-We work alongside equipment dealers, resellers, rental fleets,
-service providers, and industrial operators to expand transaction
-opportunities and improve asset visibility across markets.
-</p>
-
-<p>
-Our role is to identify opportunities, connect qualified parties,
-and support successful transactions.
-</p>
-
-</div>
-</section>
-
-<section class="section">
-<div class="container">
-
-<h3>Current Areas of Interest</h3>
-
-<ul>
-<li>Generator and engine resellers</li>
-<li>Industrial motor specialists</li>
-<li>Equipment traders and brokers</li>
-<li>Rental fleet operators</li>
-<li>Mining and industrial contractors</li>
-<li>Marine and offshore operators</li>
-<li>Industrial service providers</li>
-<li>Surplus asset owners</li>
-</ul>
-
-</div>
-</section>
-
-<section id="contact" class="section">
-<div class="container">
-
-<h3>Contact</h3>
-
-<p>
-EDRP<br>
-Enterprise Distribution & Resource Partners
-</p>
-
-<p>
-Canada | Americas
-</p>
-
-<p>
-Email: info@edrp.ca
-</p>
-
-<p>
-Website: www.edrp.ca
-</p>
-
-</div>
-</section>
-
-<footer>
-<div class="container">
-© 2026 EDRP | Enterprise Distribution & Resource Partners
-</div>
-</footer>
-
+  <footer class="site-footer" id="about"><div class="container footer-inner"><div><div class="brand footer-brand"><span class="brand-mark">E</span><span>EDRP</span></div><p>Industrial equipment discovery, made simpler.</p></div><div class="footer-links"><a href="#">Browse</a><a href="#">How it works</a><a href="#">About</a><a href="#">Contact</a></div></div><div class="container footer-bottom"><span>© 2026 EDRP</span><span>Free equipment listings · Human verified</span></div></footer>
 </body>
 </html>
