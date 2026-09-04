@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Browse Equipment | EDRP</title>
+<meta name="description" content="Browse used, surplus, demo and excess industrial equipment listed by companies around the world.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html">EDRP<span>.</span></a>
+    <nav>
+      <a class="active" href="browse.html">Browse</a>
+      <a href="categories.html">Categories</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="about.html">About</a>
+      <a class="nav-cta" href="submit.html">List Equipment — Free</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Open menu">☰</button>
+  </div>
+</header>
+
+<main>
+<section class="page-hero">
+  <div class="container">
+    <div class="eyebrow">Equipment directory</div>
+    <h1>Browse industrial equipment.</h1>
+    <p>Discover surplus, used, demo and excess equipment from companies around the world.</p>
+  </div>
+</section>
+
+<section class="browse-section">
+  <div class="container">
+    <div class="search-panel">
+      <label for="search">Search equipment</label>
+      <div class="search-row">
+        <input id="search" type="search" placeholder="Manufacturer, model, equipment..." autocomplete="off">
+        <button class="btn btn-primary" id="searchBtn">Search</button>
+      </div>
+      <div class="filters">
+        <label>Category
+          <select id="category">
+            <option value="">All categories</option>
+            <option>Generators & Power Generation</option>
+            <option>Pumps</option>
+            <option>Compressors</option>
+            <option>Construction Equipment</option>
+            <option>Material Handling Equipment</option>
+            <option>Machine Tools</option>
+            <option>Industrial Machinery</option>
+            <option>Motors & Electrical Equipment</option>
+            <option>Process & Manufacturing Equipment</option>
+            <option>Heavy Equipment & Vehicles</option>
+            <option>Miscellaneous</option>
+          </select>
+        </label>
+        <label>Condition
+          <select id="condition">
+            <option value="">All conditions</option>
+            <option>New</option><option>Unused</option><option>Demo</option>
+            <option>Used — Excellent</option><option>Used — Good</option>
+            <option>Used — Fair</option><option>Used — Poor</option>
+            <option>For Parts</option><option>Condition Unknown</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="results-head">
+      <div><span id="resultCount">6</span> listings</div>
+      <div class="results-note">Human-verified listings</div>
+    </div>
+
+    <div class="listing-grid" id="listingGrid"></div>
+    <div class="empty-state" id="emptyState" hidden>
+      <h2>No equipment found.</h2>
+      <p>Try a different search or remove one of the filters.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div><a class="brand" href="index.html">EDRP<span>.</span></a><p>Industrial equipment. Available now.</p></div>
+    <div><strong>Explore</strong><a href="browse.html">Browse Equipment</a><a href="categories.html">Categories</a><a href="how-it-works.html">How It Works</a></div>
+    <div><strong>List</strong><a href="submit.html">List Equipment — Free</a><a href="contact.html">Contact EDRP</a></div>
+  </div>
+  <div class="container footer-bottom">© 2026 EDRP · Free industrial equipment directory</div>
+</footer>
+<script src="js/main.js"></script>
+<script src="js/browse.js"></script>
+</body>
+</html>

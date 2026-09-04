@@ -1,0 +1,3 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EDRP V1 QA</title><link rel="stylesheet" href="css/style.css"></head><body><main class="form-page"><div class="container form-shell"><p class="section-kicker">V1 QA</p><h1>Prototype test</h1><ul id="results"><li>Testing…</li></ul></div></main><script>
+const pages=["index.html","browse.html","listing.html?id=EDRP-000001","submit.html","contact.html","robots.txt","sitemap.xml"];Promise.all(pages.map(async p=>{try{const r=await fetch(p);return [p,r.ok]}catch(e){return[p,false]}})).then(a=>document.getElementById("results").innerHTML=a.map(x=>`<li>${x[1]?"✓":"✗"} ${x[0]}</li>`).join(""));
+</script></body></html>

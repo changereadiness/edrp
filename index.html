@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="EDRP — Industrial equipment. Available now.">
+  <meta name="description" content="EDRP is a global directory for surplus, used, demo and excess industrial equipment. Discover equipment from companies around the world.">
   <title>EDRP | Industrial Equipment. Available Now.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,74 +17,223 @@
         <span class="brand-mark">E</span><span>EDRP</span>
       </a>
       <nav class="nav" aria-label="Primary navigation">
-        <a href="#browse">Browse</a>
-        <a href="#how">How it works</a>
+        <a href="#equipment">Browse</a>
+        <a href="#how-it-works">How it works</a>
         <a href="#categories">Categories</a>
         <a href="#about">About</a>
-        <a class="nav-cta" href="#list">List Equipment — Free</a>
+        <a class="nav-cta" href="#sell">List Equipment — Free</a>
       </nav>
     </div>
   </header>
 
   <main>
+    <!-- HERO -->
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">EDRP · Equipment Discovery & Resale Platform</p>
+          <p class="eyebrow">Equipment Discovery & Resale Platform</p>
           <h1>Industrial equipment.<br><span>Available now.</span></h1>
-          <p class="hero-text">Discover surplus, used, demo and excess equipment from companies around the world.</p>
+          <p class="hero-text">Discover surplus, used, demo and excess industrial equipment from companies around the world.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#browse">Browse Equipment</a>
-            <a class="button button-secondary" href="#list">List Equipment — Free</a>
+            <a class="button button-primary" href="#equipment">Browse Equipment</a>
+            <a class="button button-secondary" href="#sell">List Equipment — Free</a>
           </div>
-          <div class="trust-line">
-            <span>Human-verified listings</span>
-            <span>·</span>
-            <span>Direct seller contact</span>
+          <div class="trust-line" aria-label="EDRP trust points">
+            <span>Human-verified listings</span><span>·</span><span>Company identity</span><span>·</span><span>Direct seller contact</span>
           </div>
         </div>
-        <div class="hero-panel" aria-label="Featured equipment preview">
+
+        <a class="hero-panel" href="#equipment" aria-label="View featured equipment">
           <div class="panel-top"><span>EDRP-000001</span><span class="verified">✓ EDRP Verified</span></div>
-          <div class="equipment-visual"><div class="machine-shape"><div></div><div></div><div></div></div></div>
+          <div class="equipment-visual">
+            <div class="machine-shape"><div></div><div></div><div></div></div>
+          </div>
           <div class="panel-bottom">
-            <div><p class="label">Featured listing</p><h2>Caterpillar 3516</h2><p>Diesel Generator · 1,500 kW · 50 Hz</p></div>
+            <div>
+              <p class="label">Featured listing</p>
+              <h2>Caterpillar 3516</h2>
+              <p>Diesel Generator · 1,500 kW · 50 Hz</p>
+            </div>
             <span class="location">Canada</span>
           </div>
-        </div>
+        </a>
       </div>
     </section>
 
-    <section class="section section-muted" id="browse">
+    <!-- MARKETPLACE -->
+    <section class="section section-muted" id="equipment">
       <div class="container">
         <div class="section-heading">
-          <div><p class="eyebrow">Marketplace</p><h2>Find equipment.</h2></div>
-          <a class="text-link" href="#">View all equipment →</a>
+          <div>
+            <p class="eyebrow">The marketplace</p>
+            <h2>Find equipment.</h2>
+          </div>
+          <a class="text-link" href="#equipment-grid">View all equipment →</a>
         </div>
-        <div class="search-bar">
+
+        <div class="search-bar" role="search">
           <input type="search" placeholder="Search manufacturer, model or equipment..." aria-label="Search equipment">
-          <select aria-label="Category"><option>All categories</option><option>Generators & Power Generation</option><option>Pumps</option><option>Compressors</option><option>Construction Equipment</option></select>
+          <select aria-label="Category">
+            <option>All categories</option>
+            <option>Generators & Power Generation</option>
+            <option>Pumps</option>
+            <option>Compressors</option>
+            <option>Construction Equipment</option>
+            <option>Material Handling Equipment</option>
+            <option>Machine Tools</option>
+          </select>
           <button class="button button-primary" type="button">Search</button>
         </div>
-        <div class="listing-grid">
-          <article class="listing-card"><div class="card-visual"><span>EDRP-000001</span></div><div class="card-body"><p class="card-category">Generators & Power Generation</p><h3>Caterpillar 3516 Diesel Generator</h3><p>1,500 kW · 50 Hz</p><div class="card-meta"><span>Canada</span><span class="verified">✓ Verified</span></div></div></article>
-          <article class="listing-card"><div class="card-visual"><span>EDRP-000002</span></div><div class="card-body"><p class="card-category">Pumps</p><h3>Industrial Centrifugal Pump</h3><p>Flowserve Mark 3 · Used — Good</p><div class="card-meta"><span>Thailand</span><span class="verified">✓ Verified</span></div></div></article>
-          <article class="listing-card"><div class="card-visual"><span>EDRP-000003</span></div><div class="card-body"><p class="card-category">Compressors</p><h3>Atlas Copco GA 75</h3><p>75 kW · Used — Excellent</p><div class="card-meta"><span>Malaysia</span><span class="verified">✓ Verified</span></div></div></article>
+
+        <div class="listing-grid" id="equipment-grid">
+          <a class="listing-card" href="#listing-000001">
+            <div class="card-visual machine-generator"><span>EDRP-000001</span></div>
+            <div class="card-body">
+              <p class="card-category">Generators & Power Generation</p>
+              <h3>Caterpillar 3516 Diesel Generator</h3>
+              <p>1,500 kW · 50 Hz · Used — Excellent</p>
+              <div class="card-meta"><span>Canada</span><span class="verified">✓ Verified</span></div>
+            </div>
+          </a>
+
+          <a class="listing-card" href="#listing-000002">
+            <div class="card-visual machine-pump"><span>EDRP-000002</span></div>
+            <div class="card-body">
+              <p class="card-category">Pumps</p>
+              <h3>Industrial Centrifugal Pump</h3>
+              <p>Flowserve Mark 3 · Used — Good</p>
+              <div class="card-meta"><span>Thailand</span><span class="verified">✓ Verified</span></div>
+            </div>
+          </a>
+
+          <a class="listing-card" href="#listing-000003">
+            <div class="card-visual machine-compressor"><span>EDRP-000003</span></div>
+            <div class="card-body">
+              <p class="card-category">Compressors</p>
+              <h3>Atlas Copco GA 75</h3>
+              <p>75 kW · Used — Excellent</p>
+              <div class="card-meta"><span>Malaysia</span><span class="verified">✓ Verified</span></div>
+            </div>
+          </a>
+        </div>
+
+        <div class="marketplace-note">
+          <span>New equipment is added as sellers are verified.</span>
+          <a class="text-link" href="#sell">Have equipment to list? →</a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="how">
-      <div class="container narrow">
-        <p class="eyebrow">Simple by design</p><h2>Discover. Connect. Transact.</h2>
-        <div class="steps"><div><span>01</span><h3>Discover</h3><p>Search a growing directory of surplus and used industrial equipment.</p></div><div><span>02</span><h3>Connect</h3><p>Contact the company offering the equipment directly through EDRP.</p></div><div><span>03</span><h3>Transact</h3><p>Buyer and seller handle the transaction directly. EDRP stays out of the deal.</p></div></div>
+    <!-- VALUE PROPOSITION -->
+    <section class="section">
+      <div class="container value-grid">
+        <div>
+          <p class="eyebrow">Why EDRP</p>
+          <h2>Equipment doesn't become worthless because someone stopped using it.</h2>
+        </div>
+        <div class="value-copy">
+          <p>Industrial companies routinely have equipment sitting idle, in storage, replaced by newer assets, or left over from completed projects.</p>
+          <p>EDRP makes that equipment easier to discover — and gives companies a simple way to put it in front of potential buyers.</p>
+        </div>
       </div>
     </section>
 
-    <section class="section section-dark" id="list">
-      <div class="container split-cta"><div><p class="eyebrow">For equipment owners</p><h2>Got surplus equipment?</h2><p>List it with EDRP for free. No commissions. No catch.</p></div><a class="button button-light" href="#">List Equipment — Free →</a></div>
+    <!-- HOW IT WORKS -->
+    <section class="section section-muted" id="how-it-works">
+      <div class="container">
+        <div class="section-heading compact-heading">
+          <div><p class="eyebrow">Simple by design</p><h2>Discover. Connect. Transact.</h2></div>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <span>01</span>
+            <h3>Discover</h3>
+            <p>Search a growing directory of surplus, used, demo and excess industrial equipment.</p>
+          </div>
+          <div class="step">
+            <span>02</span>
+            <h3>Connect</h3>
+            <p>Send an inquiry through EDRP and connect with the company offering the equipment.</p>
+          </div>
+          <div class="step">
+            <span>03</span>
+            <h3>Transact</h3>
+            <p>Buyer and seller handle the transaction directly. EDRP stays out of the deal.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VERIFIED -->
+    <section class="section verified-section">
+      <div class="container verified-grid">
+        <div class="verified-badge-large"><span>✓</span><strong>EDRP<br>Verified</strong></div>
+        <div>
+          <p class="eyebrow">A human trust signal</p>
+          <h2>Every verified listing has been reviewed by EDRP.</h2>
+          <p class="verified-text">We establish contact with the seller, review the submitted information and approve the listing before publication.</p>
+          <p class="verified-fine">Verification does not mean physical inspection, ownership guarantee, condition guarantee or transaction guarantee.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="section section-muted" id="categories">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="eyebrow">Browse by category</p><h2>Industrial equipment.</h2></div>
+        </div>
+        <div class="category-grid">
+          <a href="#equipment"><span>01</span><strong>Generators & Power Generation</strong><small>Power systems, gensets and related equipment</small></a>
+          <a href="#equipment"><span>02</span><strong>Pumps</strong><small>Process, water, slurry and industrial pumps</small></a>
+          <a href="#equipment"><span>03</span><strong>Compressors</strong><small>Air and industrial compression equipment</small></a>
+          <a href="#equipment"><span>04</span><strong>Construction Equipment</strong><small>Loaders, excavators and site equipment</small></a>
+          <a href="#equipment"><span>05</span><strong>Material Handling</strong><small>Forklifts, lifting and warehouse equipment</small></a>
+          <a href="#equipment"><span>06</span><strong>Machine Tools</strong><small>CNC, machining and fabrication equipment</small></a>
+          <a href="#equipment"><span>07</span><strong>Industrial Machinery</strong><small>General industrial production equipment</small></a>
+          <a href="#equipment"><span>08</span><strong>Motors & Electrical</strong><small>Motors, electrical and power equipment</small></a>
+          <a href="#equipment"><span>09</span><strong>Process & Manufacturing</strong><small>Production and process equipment</small></a>
+          <a href="#equipment"><span>10</span><strong>Heavy Equipment & Vehicles</strong><small>Heavy-duty mobile and industrial assets</small></a>
+          <a href="#equipment"><span>11</span><strong>Miscellaneous</strong><small>Equipment that doesn't fit elsewhere</small></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SELLER CTA -->
+    <section class="section section-dark" id="sell">
+      <div class="container seller-cta">
+        <div>
+          <p class="eyebrow">For equipment owners</p>
+          <h2>Got surplus equipment?</h2>
+          <p>List it with EDRP for free. No commissions. No catch.</p>
+        </div>
+        <div class="seller-actions">
+          <a class="button button-light" href="#contact">List Equipment — Free →</a>
+          <span>We review every submission before publication.</span>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer" id="about"><div class="container footer-inner"><div><div class="brand footer-brand"><span class="brand-mark">E</span><span>EDRP</span></div><p>Industrial equipment discovery, made simpler.</p></div><div class="footer-links"><a href="#">Browse</a><a href="#">How it works</a><a href="#">About</a><a href="#">Contact</a></div></div><div class="container footer-bottom"><span>© 2026 EDRP</span><span>Free equipment listings · Human verified</span></div></footer>
+  <footer class="site-footer" id="about">
+    <div class="container footer-inner">
+      <div>
+        <div class="brand footer-brand"><span class="brand-mark">E</span><span>EDRP</span></div>
+        <p>Industrial equipment discovery, made simpler.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#equipment">Browse</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#categories">Categories</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 EDRP</span>
+      <span>Free equipment listings · Human verified</span>
+    </div>
+  </footer>
+
+  <div id="contact" class="anchor-target" aria-hidden="true"></div>
 </body>
 </html>

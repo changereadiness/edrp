@@ -1,0 +1,74 @@
+[
+  {
+    "id": "EDRP-000001",
+    "title": "Caterpillar 3516 Diesel Generator",
+    "category": "Generators & Power Generation",
+    "manufacturer": "Caterpillar",
+    "model": "3516",
+    "condition": "Used — Excellent",
+    "country": "Canada",
+    "specification": "1,500 kW · 50 Hz",
+    "status": "Active",
+    "verified": true
+  },
+  {
+    "id": "EDRP-000002",
+    "title": "Industrial Centrifugal Pump",
+    "category": "Pumps",
+    "manufacturer": "Flowserve",
+    "model": "Mark 3",
+    "condition": "Used — Good",
+    "country": "Thailand",
+    "specification": "Process pump",
+    "status": "Active",
+    "verified": true
+  },
+  {
+    "id": "EDRP-000003",
+    "title": "Atlas Copco Air Compressor",
+    "category": "Compressors",
+    "manufacturer": "Atlas Copco",
+    "model": "GA 75",
+    "condition": "Used — Excellent",
+    "country": "Malaysia",
+    "specification": "75 kW",
+    "status": "Active",
+    "verified": true
+  },
+  {
+    "id": "EDRP-000004",
+    "title": "SDLG Wheel Loader",
+    "category": "Construction Equipment",
+    "manufacturer": "SDLG",
+    "model": "LG936L",
+    "condition": "Demo",
+    "country": "Canada",
+    "specification": "3.0 t class",
+    "status": "Active",
+    "verified": true
+  },
+  {
+    "id": "EDRP-000005",
+    "title": "Toyota Electric Forklift",
+    "category": "Material Handling Equipment",
+    "manufacturer": "Toyota",
+    "model": "8F",
+    "condition": "Used — Good",
+    "country": "Japan",
+    "specification": "2.5 t",
+    "status": "Active",
+    "verified": true
+  },
+  {
+    "id": "EDRP-000006",
+    "title": "Mazak CNC Vertical Machining Center",
+    "category": "Machine Tools",
+    "manufacturer": "Mazak",
+    "model": "VCN",
+    "condition": "Used — Good",
+    "country": "Canada",
+    "specification": "CNC machining",
+    "status": "Active",
+    "verified": true
+  }
+]
