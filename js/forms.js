@@ -6,7 +6,7 @@ if(listing&&form.elements.listing_id)form.elements.listing_id.value=listing;
 form.addEventListener("submit",e=>{
 e.preventDefault();
 const result=form.querySelector(".form-result");
-if(EDRP_FORM_RECIPIENT==="REPLACE_WITH_YOUR_EDRP_EMAIL"){
+if(EDRP_FORM_RECIPIENT==="contact@sayudi.com"){
 result.textContent="The form is ready. Configure EDRP_FORM_RECIPIENT in js/forms.js before publishing.";
 result.className="form-result error";return;
 }
