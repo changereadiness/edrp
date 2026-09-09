@@ -1,41 +1,77 @@
-const listings = [
-  {id:"EDRP-000001",title:"Caterpillar 3516 Diesel Generator",category:"Generators & Power Generation",manufacturer:"Caterpillar",model:"3516",condition:"Used — Excellent",country:"Canada",spec:"1,500 kW · 50 Hz",verified:true},
-  {id:"EDRP-000002",title:"Industrial Centrifugal Pump",category:"Pumps",manufacturer:"Flowserve",model:"Mark 3",condition:"Used — Good",country:"Thailand",spec:"Process pump",verified:true},
-  {id:"EDRP-000003",title:"Atlas Copco Air Compressor",category:"Compressors",manufacturer:"Atlas Copco",model:"GA 75",condition:"Used — Excellent",country:"Malaysia",spec:"75 kW",verified:true},
-  {id:"EDRP-000004",title:"SDLG Wheel Loader",category:"Construction Equipment",manufacturer:"SDLG",model:"LG936L",condition:"Demo",country:"Canada",spec:"3.0 t class",verified:true},
-  {id:"EDRP-000005",title:"Toyota Electric Forklift",category:"Material Handling Equipment",manufacturer:"Toyota",model:"8F",condition:"Used — Good",country:"Japan",spec:"2.5 t",verified:true},
-  {id:"EDRP-000006",title:"Mazak CNC Vertical Machining Center",category:"Machine Tools",manufacturer:"Mazak",model:"VCN",condition:"Used — Good",country:"Canada",spec:"CNC machining",verified:true}
-];
+(() => {
+  const grid = document.getElementById('listingGrid');
+  const empty = document.getElementById('emptyState');
+  const count = document.getElementById('resultCount');
+  const search = document.getElementById('search');
+  const category = document.getElementById('category');
+  const condition = document.getElementById('condition');
+  const searchBtn = document.getElementById('searchBtn');
+  const resultsNote = document.getElementById('resultsNote');
+  let listings = [];
 
-const grid=document.getElementById("listingGrid"), empty=document.getElementById("emptyState"), count=document.getElementById("resultCount");
+  const esc = (value = '') => String(value).replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
 
-function card(x){
-  return `<a class="listing-card" href="listing.html?id=${encodeURIComponent(x.id)}">
-    <div class="listing-image"><span>INDUSTRIAL EQUIPMENT</span></div>
-    <div class="listing-body">
-      <div class="listing-meta"><span>${x.category}</span>${x.verified?'<b>EDRP Verified</b>':''}</div>
-      <h2>${x.title}</h2><p>${x.manufacturer} · ${x.model}</p>
-      <div class="listing-details"><span>${x.condition}</span><span>${x.country}</span></div>
-      <div class="listing-spec">${x.spec}</div>
-      <div class="listing-id">${x.id}</div>
-    </div>
-  </a>`;
-}
-function render(){
-  const q=document.getElementById("search").value.trim().toLowerCase();
-  const category=document.getElementById("category").value;
-  const condition=document.getElementById("condition").value;
-  const filtered=listings.filter(x=>{
-    const hay=`${x.title} ${x.manufacturer} ${x.model} ${x.category} ${x.country} ${x.spec}`.toLowerCase();
-    return (!q||hay.includes(q))&&(!category||x.category===category)&&(!condition||x.condition===condition);
+  function imageMarkup(item) {
+    const first = Array.isArray(item.images) && item.images.length ? item.images[0] : '';
+    if (first) return `<div class="listing-image has-image"><img src="${esc(first)}" alt="${esc(item.title)}" loading="lazy"></div>`;
+    return `<div class="listing-image"><span>${item.sample ? 'SAMPLE EQUIPMENT' : 'INDUSTRIAL EQUIPMENT'}</span></div>`;
+  }
+
+  function card(item) {
+    const location = [item.city, item.country].filter(Boolean).join(', ') || 'Location on request';
+    const badge = item.sample ? '<b class="sample-text">Sample</b>' : (item.verified ? '<b>EDRP Verified</b>' : '');
+    return `<a class="listing-card" href="listing.html?id=${encodeURIComponent(item.id)}">
+      ${imageMarkup(item)}
+      <div class="listing-body">
+        <div class="listing-meta"><span>${esc(item.category)}</span>${badge}</div>
+        <h2>${esc(item.title)}</h2>
+        <p>${esc(item.manufacturer)}${item.model ? ` · ${esc(item.model)}` : ''}</p>
+        <div class="listing-details"><span>${esc(item.condition)}</span><span>${esc(location)}</span></div>
+        <div class="listing-spec">${esc(item.specification || '')}</div>
+        <div class="listing-id">${esc(item.id)}</div>
+      </div>
+    </a>`;
+  }
+
+  function render() {
+    const q = search.value.trim().toLowerCase();
+    const cat = category.value;
+    const cond = condition.value;
+    const filtered = listings.filter(item => {
+      const hay = [item.id,item.title,item.company,item.manufacturer,item.model,item.category,item.country,item.city,item.specification,item.condition].join(' ').toLowerCase();
+      return (!q || hay.includes(q)) && (!cat || item.category === cat) && (!cond || item.condition === cond);
+    });
+    count.textContent = filtered.length;
+    grid.innerHTML = filtered.map(card).join('');
+    empty.hidden = filtered.length !== 0;
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('q')) search.value = params.get('q');
+  if (params.get('category')) category.value = params.get('category');
+  if (params.get('condition')) condition.value = params.get('condition');
+
+  ['input','change'].forEach(evt => {
+    search.addEventListener(evt, render);
+    category.addEventListener(evt, render);
+    condition.addEventListener(evt, render);
   });
-  count.textContent=filtered.length;
-  grid.innerHTML=filtered.map(card).join("");
-  empty.hidden=filtered.length!==0;
-}
-["search","category","condition"].forEach(id=>{
-  document.getElementById(id).addEventListener("input",render);
-  document.getElementById(id).addEventListener("change",render);
-});
-document.getElementById("searchBtn").addEventListener("click",render);
-render();
+  searchBtn.addEventListener('click', render);
+
+  fetch('data/inventory.json')
+    .then(r => { if (!r.ok) throw new Error(`Inventory request failed: ${r.status}`); return r.json(); })
+    .then(items => {
+      listings = items.filter(x => x.status === 'Active' || x.sample === true);
+      const realCount = listings.filter(x => !x.sample).length;
+      if (resultsNote) resultsNote.textContent = realCount ? 'Human-verified inventory' : 'Sample inventory';
+      render();
+    })
+    .catch(err => {
+      console.error(err);
+      count.textContent = '0';
+      grid.innerHTML = '';
+      empty.hidden = false;
+      empty.querySelector('h2').textContent = 'Equipment could not be loaded.';
+      empty.querySelector('p').textContent = 'Please refresh the page.';
+    });
+})();

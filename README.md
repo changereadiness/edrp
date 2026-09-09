@@ -1,33 +1,47 @@
 # EDRP V1
 
-Complete static prototype for EDRP.
+Static GitHub Pages prototype for EDRP.net.
 
-## What is included
-- Homepage
-- Marketplace search/filter
-- Individual listing engine
-- Six initial prototype listings
-- EDRP Verified trust signal
-- Buyer inquiry form
-- Seller submission form
-- SEO basics
-- Responsive layout
-- QA page
+## Source of truth for listings
+All listing data lives in `data/inventory.json`.
 
-## Deploy
-This package is designed for GitHub Pages. Keep the repository on `main`. The website files are under `V1/`.
+Do not duplicate listing records in JavaScript or HTML. `index.html`, `browse.html` and `listing.html` all read the same inventory file.
 
-If GitHub Pages is configured to publish from a subdirectory, publish `V1`. If your Pages configuration requires the repository root, copy the contents of `V1` to the root.
+## Images
+Use one folder per listing:
 
-`CNAME` contains `edrp.net`.
+`assets/listings/EDRP-000001/01.jpg`
+`assets/listings/EDRP-000001/02.jpg`
+
+Add those relative paths to the listing's `images` array in `data/inventory.json`.
 
 ## Forms
-Open `V1/js/forms.js` and replace `REPLACE_WITH_YOUR_EDRP_EMAIL` with the mailbox you want EDRP inquiries sent to. The prototype then uses the visitor's mail application to prepare the message.
+Set the EDRP destination mailbox once in `js/config.js`:
 
-This keeps V1 dependency-free. A proper transactional form service can replace this later without changing the product flow.
+```js
+window.EDRP_CONFIG = {
+  formRecipient: "your-address@example.com"
+};
+```
 
-## Important
-The six listings are prototype inventory. Replace them with real, human-verified listings before presenting them as live inventory.
+V1 uses the visitor's mail application. No external form service is required.
+
+## Prototype inventory
+The six bundled records are explicitly marked `sample: true`, are not represented as verified inventory, and cannot receive buyer inquiries. Remove the sample records when genuine inventory is ready to publish.
+
+## Adding a real listing
+1. Assign the next permanent EDRP ID.
+2. Create the listing image folder under `assets/listings/<ID>/`.
+3. Add one complete record to `data/inventory.json` with `status: "Active"`, `sample: false`, and the appropriate verification state.
+4. Add the listing URL to `sitemap.xml`.
+5. Commit to `main`.
+6. Test browse/search/filter, listing page, image gallery, inquiry link and mobile layout.
+
+## Lifecycle
+Use `Active`, `Sold`, `Unavailable` (and later `Archived`) for genuine inventory. Never reuse an EDRP ID.
+
+## Freeze rule
+After V1 passes QA and the form recipient is configured, freeze the website. Routine changes after Freeze should be limited to listing additions/status updates/factual corrections and genuine bug fixes.
 
 ## Production
-Do not turn this prototype into the production database-backed application. Preserve its UX, content model and business rules, then implement production separately.
+Do not retrofit this static prototype into the future database-backed production application. Preserve the validated UX, data model and business rules, then implement the production system separately.

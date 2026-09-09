@@ -1,36 +1,35 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Industrial equipment listing on EDRP.">
+<meta name="robots" content="noindex,follow">
 <link rel="canonical" href="https://edrp.net/listing.html">
-<link rel="stylesheet" href="css/style.css">
-<title>Equipment Listing | EDRP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"><title>Equipment Listing | EDRP</title>
 </head>
 <body>
-<header class="site-header"><div class="container header-inner">
-<a class="brand" href="index.html">EDRP<span>.</span></a>
-<nav class="nav"><a href="browse.html">Browse Equipment</a><a href="index.html#sell">List Equipment</a></nav>
-</div></header>
+<header class="site-header"><div class="container header-inner"><a class="brand" href="index.html"><span class="brand-mark">E</span><span>EDRP</span></a><nav class="nav" aria-label="Primary navigation"><a href="browse.html">Browse</a><a href="index.html#how-it-works">How It Works</a><a href="about.html">About</a><a class="nav-cta" href="submit.html">List Equipment — Free</a></nav><button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button></div></header>
 <main class="listing-page"><div class="container">
 <a class="back-link" href="browse.html">← Back to equipment</a>
 <section class="listing-layout">
-<div class="listing-visual"><div class="listing-hero-image"><span>Equipment Image</span></div></div>
-<div class="listing-copy">
-<div class="listing-tags"><span id="listing-category" class="tag tag-light"></span><span id="listing-condition" class="tag"></span><span class="tag tag-verified">EDRP Verified</span></div>
-<p id="listing-id" class="eyebrow"></p><h1 id="listing-title">Equipment Listing</h1><p id="listing-location" class="listing-location"></p>
-<div class="spec-card">
-<div><span>Manufacturer</span><strong id="listing-manufacturer"></strong></div>
-<div><span>Model</span><strong id="listing-model"></strong></div>
-<div><span>Specification</span><strong id="listing-spec"></strong></div>
-<div><span>Availability</span><strong id="listing-availability"></strong></div>
-</div>
-<div class="verify-box"><strong>EDRP Verified</strong><p>EDRP has established contact with the seller, reviewed the listing and approved it for publication. Verification does not constitute a physical inspection or guarantee of condition or availability.</p></div>
-<a id="listing-contact" class="btn btn-primary btn-wide" href="contact.html">Contact EDRP About This Listing</a>
-</div></section>
-<section class="listing-description"><div><p class="section-kicker">Listing details</p><h2>About this equipment</h2></div><p id="listing-description"></p></section>
+  <div class="listing-visual" id="listing-gallery"><div class="listing-hero-image"><span>Equipment image</span></div></div>
+  <div class="listing-copy">
+    <div class="listing-tags"><span id="listing-category" class="tag tag-light"></span><span id="listing-condition" class="tag"></span><span id="verified-tag" class="tag tag-verified">EDRP Verified</span><span id="sample-tag" class="tag tag-sample" hidden>Sample listing</span></div>
+    <p id="listing-id" class="eyebrow"></p><h1 id="listing-title">Equipment Listing</h1><p id="listing-location" class="listing-location"></p>
+    <div class="seller-identity"><span>Offered by</span><strong id="listing-company">—</strong></div>
+    <div class="spec-card">
+      <div><span>Manufacturer</span><strong id="listing-manufacturer"></strong></div><div><span>Model</span><strong id="listing-model"></strong></div>
+      <div><span>Specification</span><strong id="listing-spec"></strong></div><div><span>Availability</span><strong id="listing-availability"></strong></div>
+      <div id="row-year"><span>Year</span><strong></strong></div><div id="row-quantity"><span>Quantity</span><strong></strong></div>
+      <div id="row-price" class="spec-wide"><span>Price</span><strong></strong></div><div><span>Status</span><strong id="listing-status"></strong></div>
+    </div>
+    <div class="verify-box" id="verification-box"><strong>EDRP Verified</strong><p>EDRP has established contact with the seller, reviewed the listing and approved it for publication. Verification does not constitute a physical inspection or guarantee of ownership, condition, compliance, availability or transaction outcome.</p></div>
+    <a id="listing-contact" class="btn btn-primary btn-wide" href="contact.html">Contact EDRP About This Listing</a>
+  </div>
+</section>
+<section class="listing-description" id="listing-details-section"><div><p class="section-kicker">Listing details</p><h2>About this equipment</h2></div><div class="listing-detail-copy"><p id="listing-description"></p><div id="condition-details-block" class="detail-block"><h3>Condition details</h3><p></p></div><div id="logistics-block" class="detail-block"><h3>Logistics / location</h3><p></p></div><div class="listing-dates"><span id="date-listed-block">Listed: <strong></strong></span><span id="date-verified-block">Verified: <strong></strong></span></div></div></section>
 </div></main>
-<footer class="site-footer"><div class="container footer-inner"><div><strong>EDRP.</strong><p>Industrial equipment. Available now.</p></div><div><p>Global equipment discovery · Human-verified listings</p></div></div></footer>
-<script src="js/listing.js"></script>
+<footer class="site-footer"><div class="container footer-inner"><div><div class="brand footer-brand"><span class="brand-mark">E</span><span>EDRP</span></div><p>Industrial equipment discovery, made simpler.</p></div><div class="footer-links"><a href="browse.html">Browse</a><a href="about.html">About</a><a href="contact.html">Contact</a></div></div><div class="container footer-bottom"><span>© 2026 EDRP</span><span>Free equipment listings · Human reviewed</span></div></footer>
+<script src="js/main.js"></script><script src="js/listing.js"></script>
 </body></html>
